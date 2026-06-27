@@ -1,18 +1,41 @@
----
-title: allowedDevOrigins
-description: Use `allowedDevOrigins` to configure additional origins that can request the dev server.
----
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-6">
+      <div className="max-w-2xl w-full bg-white shadow-lg rounded-xl p-8">
+        <h1 className="text-3xl font-bold text-center mb-4">
+          欢迎来到我的网站 🚀
+        </h1>
 
-{/* The content of this doc is shared between the app and pages router. You can use the `<PagesOnly>Content</PagesOnly>` component to add content that is specific to the Pages Router. Any shared content should not be wrapped in a component. */}
+        <p className="text-gray-600 text-center mb-6">
+          这是一个由 Next.js + Tailwind CSS 构建的现代化网站。
+        </p>
 
-Next.js blocks cross-origin requests to dev-only assets and endpoints during development by default to prevent unauthorized access.
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="p-4 bg-blue-50 rounded-lg text-center shadow">
+            <h2 className="font-semibold mb-2">⚡ 快速</h2>
+            <p className="text-sm text-gray-600">基于 Vercel 的极速部署体验。</p>
+          </div>
 
-To configure a Next.js application to allow requests from origins other than the hostname the server was initialized with (`localhost` by default), use the `allowedDevOrigins` config option.
+          <div className="p-4 bg-green-50 rounded-lg text-center shadow">
+            <h2 className="font-semibold mb-2">🎨 美观</h2>
+            <p className="text-sm text-gray-600">Tailwind 让 UI 设计更简单。</p>
+          </div>
 
-`allowedDevOrigins` lets you set additional origins that can request the dev server in development mode. For example, to use `local-origin.dev` instead of only `localhost`, open `next.config.js` and add the `allowedDevOrigins` config:
+          <div className="p-4 bg-yellow-50 rounded-lg text-center shadow">
+            <h2 className="font-semibold mb-2">🧩 可扩展</h2>
+            <p className="text-sm text-gray-600">随时添加新页面和功能。</p>
+          </div>
+        </div>
 
-```js filename="next.config.js"
-module.exports = {
-  allowedDevOrigins: ['local-origin.dev', '*.local-origin.dev'],
+        <div className="text-center mt-8">
+          <a
+            href="mailto:example@example.com"
+            className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700"
+          >
+            联系我
+          </a>
+        </div>
+      </div>
+    </main>
+  );
 }
-```
